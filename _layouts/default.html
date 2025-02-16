@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script defer src="/assets/js/theme-toggle.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">YourName</a>
+            <ul class="nav-links">
+                <li><a href="/about">About</a></li>
+                <li><a href="/poems">Poems</a></li>
+                <li><a href="/contemplatio">Contemplatio</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+        </div>
+    </nav>
+    
+    <main>
+        {{ content }}
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 YourName. All rights reserved.</p>
+    </footer>
+</body>
+</html>
