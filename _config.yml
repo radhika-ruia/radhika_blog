@@ -1,30 +1,31 @@
-# The Site Configuration
-
-
-# Import the theme
-layout: home
-
-# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
-# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
-# otherwise, the layout language will use the default value of 'en'.
-lang: en
-
-# Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone:
-
-# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# ↓ --------------------------
-
-title: Contemplatio Chronicles # the main title
-
+# Site configuration
+title: "Contemplatio Chronicles"
 tagline: A blog by Radhika Ruia # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   education, facts, blog, passionproject, poems, math, science, technology
 
-# Fill in the protocol & hostname for your site.
-# E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://ContemplatioChronicles.github.io"
+# Theme configuration
+theme: "jekyll-theme-chirpy"
+
+# Language of the webpage
+lang: "en"
+
+# Timezone (optional)
+timezone: "Asia/Kolkata"
+
+# Base URL for the repository (change to your repository name if deployed to GitHub Pages)
+baseurl: "/ContemplatioChronicles.github.io"  # Replace with your repo name if on GitHub Pages
+url: "https://ContemplatioChronicles.github.io"  # Replace with your actual GitHub Pages URL
+
+# Markdown engine
+markdown: "kramdown"
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
+
+
+
+permalink: pretty 
 
 github:
   username: github_username # change to your GitHub username
@@ -151,7 +152,6 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 
@@ -171,6 +171,13 @@ collections:
   tabs:
     output: true
     sort_by: order
+  poem_posts:
+    output: true
+  contemplatio_posts:
+    output: true
+  contemplatio:
+    output: true
+    permalink: /contemplatio/:path/
 
 defaults:
   - scope:
@@ -220,6 +227,9 @@ exclude:
   - rollup.config.js
   - "package*.json"
 
+include:
+ - tabs
+
 jekyll-archives:
   enabled: [categories, tags]
   layouts:
@@ -228,3 +238,6 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+paginate: 5
+paginate_path: "/blog/page:num/"

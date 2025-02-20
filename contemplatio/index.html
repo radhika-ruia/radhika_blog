@@ -1,0 +1,22 @@
+---
+layout: default
+title: "Contemplatio"
+permalink: /contemplatio/
+---
+
+<div class="container">
+    <h1 class="page-title">Contemplatio</h1>
+    <div class="blog-posts">
+        {% for topic in site.static_files %}
+            {% if topic.path contains 'contemplatio_main_topics' and topic.extname == '' %}
+                {% assign folder = topic.path | split: '/' %}
+                {% assign topic_name = folder.last %}
+                <div class="post-box">
+                    <a href="{{ topic.path | relative_url }}">
+                        <h2 class="post-title">{{ topic_name }}</h2>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

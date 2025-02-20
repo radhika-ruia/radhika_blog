@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style_blog.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Contemplatio Chronicles</div>
+        <ul class="nav-links">
+            <li><a href="{{ site.baseurl }}/">Home</a></li>
+            <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+            <li><a href="{{ site.baseurl }}/poems/">Poems</a></li>
+            <li><a href="{{ site.baseurl }}/contemplatio/">Contemplatio</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <i class="fas fa-moon">🌙</i>
+                <i class="fas fa-sun">☀️</i>
+                <span class="ball"></span>
+            </label>
+            <input type="text" class="search-box" placeholder="Search posts...">
+        </div>
+    </nav>
+
+<main class="blog-container">
+    <!-- Full-Width Featured Image -->
+    <section class="full-width-image">
+        <img src="{{ page.featured_image }}" alt="Featured Image">
+    </section>
+
+    <!-- Main Blog Post -->
+    <article class="post-content">
+        <h1>{{ page.title }}</h1>
+        <p>By {{ page.author }} - {{ page.date | date: "%B %d, %Y" }}</p>
+        <div class="blog-body">
+            {{ content }}
+        </div>
+    </article>
+
+    <!-- Divider Line -->
+    <hr class="divider">
+
+    <!-- Featured Posts & Subscription Box -->
+    <section class="featured-and-subscription">
+        <!-- Featured Posts -->
+        <div class="featured-posts">
+            <h3>Featured Poems</h3>
+            <ul>
+                {% for post in site.contemplatio_posts %}
+                <li>
+                    <a href="{{ post.url | relative_url }}">
+                        <img src="{{ post.image }}" alt="Post Image">
+                        <div>
+                            <h4>{{ post.title }}</h4>
+                            <p>{{ post.date | date: "%d %b, %Y" }}</p>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </section>
+</main>
+
+    <footer>
+        <p>© 2025 Contemplatio Chronicles</p>
+    </footer>
+    
+    <script>
+        const checkbox = document.getElementById("checkbox");
+        checkbox.addEventListener("change", () => {
+            document.body.classList.toggle("dark");
+        });
+    </script>
+</body>
+</html>

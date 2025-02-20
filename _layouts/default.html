@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <script defer src="/assets/js/theme-toggle.js"></script>
+    <title>Navbar</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style_home.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="container">
-            <a href="/" class="logo">YourName</a>
-            <ul class="nav-links">
-                <li><a href="/about">About</a></li>
-                <li><a href="/poems">Poems</a></li>
-                <li><a href="/contemplatio">Contemplatio</a></li>
-            </ul>
-            <button id="theme-toggle" class="theme-btn">🌙</button>
+        <div class="logo">Contemplatio Chronicles</div>
+        <ul class="nav-links">
+            <li><a href="{{ site.baseurl }}/">Home</a></li>
+            <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+            <li><a href="{{ site.baseurl }}/poems/">Poems</a></li>
+            <li><a href="{{ site.baseurl }}/contemplatio/">Contemplatio</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="checkbox" class="checkbox" id="checkbox">
+             <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon">🌙</i>
+            <i class="fas fa-sun">☀️</i>
+            <span class="ball"></span>
+            </label>
+            <input type="text" class="search-box" placeholder="Search posts...">
         </div>
     </nav>
-    
     <main>
         {{ content }}
     </main>
-    
     <footer>
         <p>&copy; 2025 YourName. All rights reserved.</p>
     </footer>
+    <script>
+        const checkbox = document.getElementById("checkbox")
+        checkbox.addEventListener("change", () => {
+        document.body.classList.toggle("dark")
+        })
+
+    </script>
 </body>
 </html>

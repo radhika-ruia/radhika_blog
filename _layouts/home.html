@@ -1,50 +1,69 @@
+---
+layout: home
+title: Home
+permalink: /home/
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar</title>
-    <link rel="stylesheet" href="\assets\css\style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style_home.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">Contemplatio Chronicles</div>
         <ul class="nav-links">
             <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Contemplatio</a></li>
-            <li><a href="#">Poems</a></li>
-            <li><a href="#">...</a></li>
+            <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+            <li><a href="{{ site.baseurl }}/poems/">Poems</a></li>
+            <li><a href="{{ site.baseurl }}/contemplatio/">Contemplatio</a></li>
         </ul>
         <div class="search-container">
-            <button class="settings-btn">⚙</button>
-            <input type="text" class="search-bar" placeholder="Search posts...">
+            <input type="checkbox" class="checkbox" id="checkbox">
+             <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon">🌙</i>
+            <i class="fas fa-sun">☀️</i>
+            <span class="ball"></span>
+            </label>
+            <input type="text" class="search-box" placeholder="Search posts...">
         </div>
     </nav>
 
     <div class="center-box">
     <div class="image-container">
-        <img src="\assets\images\profile.jpg" alt="Image">
+        <img src="{{ site.baseurl }}/assets/images/profile.jpg" alt="Image">
     </div>
     <div class="text-container">
         <div class="profile_img">
-        <img src="\assets\images\profile_img.jpg" alt="Profile Picture">
+        <img src="{{ site.baseurl }}/assets/images/profile_img.jpg" alt="Profile Picture">
     </div>
     <div class="text-container">
-        <h1>Hi! I’m <span class="highlight">Radhika</span> 👋</h1>
+        <h1>Hi! I’m <span class="highlight"> Radhika</span> 👋</h1>
         <p>A thinker, explorer, writer, coder and passionate learner</p>
         <p>
-            I’m a digital explorer, coder, and Linux advocate. This blog is my personal knowledge base on
-            productivity, programming, and the freedom of information.
+            I am a student of class 11. I am really passionate about learning new things as I believe it makes me stronger and smarter.
+            If you have the same mindset as me, embark on a journey with me to explore fascinating ideas of the wolrd, events from history, 
+            paradoxes, theories, philosophies, science and many more made simple.
         </p>
         <p>
-            Here, I share ideas, tools, and methods that help me balance productivity with creativity
-            while keeping control over my digital world. Dive in, get inspired, and feel free to share your thoughts!
+            The rhythm of my heartbeat inspires me to write soulful poems. I hope you like them.
         </p>
-        <a href="#" class="button">Let’s Work Together</a>
+        <p>
+            Please remember that I too am learning on the way and I beleive I can do a service to society by sharing my thoughts. Come join me! 
+        </p>
+        <a href="#" class="button">Let’s Connect!</a>
     </div>
     </div>
     </div>
+    <script>
+        const checkbox = document.getElementById("checkbox")
+        checkbox.addEventListener("change", () => {
+        document.body.classList.toggle("dark")
+        })
 
-
+    </script>
 </body>
 </html>

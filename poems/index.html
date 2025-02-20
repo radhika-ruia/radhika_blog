@@ -1,0 +1,52 @@
+---
+layout: default
+title: "My Poems"
+permalink: /poems/
+---
+
+<div class="container">
+    <h1 class="page-title">A Poetic Promise</h1>
+    <p class="page-description">Here I promise each one of you never to leave your side no matter how dark your days are. Here I promise each one of you that no matter how hard it may seem...It will get better. So listen to the rhythm of my heart as I pour it out on a piece of paper.</p>
+
+    <!-- Blog posts container -->
+    <div class="blog-posts">
+      
+      {% assign posts_per_row = 4 %}
+      {% assign post_count = site.poem_posts | size %}
+      {% assign row_open = false %}
+
+      {% for post in site.poem_posts %}
+        {% assign remainder = forloop.index0 | modulo: posts_per_row %}
+
+        {% if remainder == 0 %}
+          <div class="row"> <!-- Start a new row every 4 posts -->
+          {% assign row_open = true %}
+        {% endif %}
+        
+        <!-- Post Box -->
+        <div class="post-box">
+            <div class="post-image">
+                <img src={{ post.image }} alt="Post Image">
+            </div>
+            <div class="post-content">
+                <h2 class="post-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h2>
+                <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
+                <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+            </div>
+        </div>
+
+        {% assign next_remainder = forloop.index | modulo: posts_per_row %}
+        {% if next_remainder == 0 or forloop.last %}
+          </div> <!-- Close the row after every 4 posts or at the last post -->
+          {% assign row_open = false %}
+        {% endif %}
+      {% endfor %}
+
+      {% if row_open %}
+        </div> <!-- Close any unclosed row -->
+      {% endif %}
+
+    </div>
+</div>

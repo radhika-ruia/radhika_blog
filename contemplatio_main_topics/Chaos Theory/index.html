@@ -1,0 +1,22 @@
+---
+layout: default
+title: "Chaos Theory"
+permalink: /contemplatio_main_topics/chaos-theory/
+---
+
+<div class="container">
+    <h1 class="page-title">Chaos Theory</h1>
+    <div class="blog-posts">
+        {% assign topic_path = 'contemplatio_main_topics/Chaos Theory/' %}
+        {% for file in site.static_files %}
+            {% if file.path contains topic_path and file.extname == '.md' %}
+                {% assign file_name = file.path | split: '/' | last %}
+                <div class="post-box">
+                    <a href="{{ file.path | relative_url }}">
+                        <h2 class="post-title">{{ file_name | replace: '.md', '' }}</h2>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
