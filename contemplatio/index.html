@@ -6,17 +6,59 @@ permalink: /contemplatio/
 
 <div class="container">
     <h1 class="page-title">Contemplatio</h1>
+    <p class="page-description">Explore deep theories, paradoxes, and philosophies through my structured contemplation.</p>
+
+    <!-- Blog posts container -->
     <div class="blog-posts">
-        {% for topic in site.static_files %}
-            {% if topic.path contains 'contemplatio_main_topics' and topic.extname == '' %}
-                {% assign folder = topic.path | split: '/' %}
-                {% assign topic_name = folder.last %}
-                <div class="post-box">
-                    <a href="{{ topic.path | relative_url }}">
-                        <h2 class="post-title">{{ topic_name }}</h2>
-                    </a>
-                </div>
-            {% endif %}
-        {% endfor %}
+      
+      {% assign posts_per_row = 4 %}
+      {% assign unique_folders = "" | split: "," %}
+      {% assign row_open = false %}
+      
+      {% for page in site.pages %}
+          {% assign parts = page.path | split: '/' %}
+          
+          {% if parts[0] == "contemplatio_main_topics" %}
+              {% assign folder_name = parts[1] %}
+              {% assign index_page = site.pages | where: "path", page.path | first %}
+              
+              {% unless unique_folders contains folder_name %}
+                  {% unless folder_name contains '.' %}
+                      {% assign unique_folders = unique_folders | push: folder_name %}
+                      {% assign remainder = forloop.index0 | modulo: posts_per_row %}
+                      
+                      {% if remainder == 0 %}
+                          <div class="row"> <!-- Start a new row every 4 posts -->
+                          {% assign row_open = true %}
+                      {% endif %}
+                      
+                      <!-- Post Box -->
+                      <div class="post-box">
+                          <div class="post-image">
+                              <img src="{{ index_page.image | relative_url }}" alt="{{ folder_name }}">
+                          </div>
+                          <div class="post-content">
+                              <h2 class="post-title">
+                                  <a href="{{ site.baseurl }}/contemplatio_main_topics/{{ folder_name | slugify }}/index.html">{{ folder_name | replace: '%20', ' ' }}</a>
+                              </h2>
+                              <p class="post-excerpt">{{ index_page.excerpt }}</p>
+                              <p class="post-date">{{ index_page.date }}</p>
+                          </div>
+                      </div>
+                      
+                      {% assign next_remainder = forloop.index | modulo: posts_per_row %}
+                      {% if next_remainder == 0 or forloop.last %}
+                          </div> <!-- Close the row after every 4 posts or at the last post -->
+                          {% assign row_open = false %}
+                      {% endif %}
+                  {% endunless %}
+              {% endunless %}
+          {% endif %}
+      {% endfor %}
+      
+      {% if row_open %}
+        </div> <!-- Close any unclosed row -->
+      {% endif %}
+      
     </div>
 </div>

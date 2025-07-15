@@ -387,3 +387,80 @@ body.light-mode {
       flex: 1 1 100%; /* 1 box per row */
     }
   }
+
+/* Main Container */
+.contents-container {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* Title & Description */
+.contents-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contents-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.contents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Content Cards */
+.content-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #ff7eb3;
+  border-radius: 12px;
+  padding: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 10px rgba(255, 126, 179, 0.4);
+}
+
+/* Numbering */
+.content-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  background: #ff7eb3;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+/* Title & Excerpt */
+.content-info {
+  text-align: left;
+}
+
+.content-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.content-excerpt {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 5px;
+}

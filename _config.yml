@@ -178,6 +178,11 @@ collections:
   contemplatio:
     output: true
     permalink: /contemplatio/:path/
+  contemplatio_main_topics:
+    output: true
+    permalink: /contemplatio_main_topics/:name/
+    defaults:
+      layout: topic
 
 defaults:
   - scope:
@@ -229,6 +234,8 @@ exclude:
 
 include:
  - tabs
+ - contemplatio
+ - contemplatio_main_topics
 
 jekyll-archives:
   enabled: [categories, tags]

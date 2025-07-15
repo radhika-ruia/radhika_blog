@@ -1,20 +1,24 @@
 {
   "main": {
-    "id": "638660ce1fdb1cdf",
+    "id": "b84fa04024f66c39",
     "type": "split",
     "children": [
       {
-        "id": "6deadfaf22743629",
+        "id": "3ef5716b41045cf2",
         "type": "tabs",
         "children": [
           {
-            "id": "538a898a8fed32f0",
+            "id": "c79e135f5474fc3c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "The Fall of the Roman Empire/2025-02-22-the-rise-of-rome.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "2025-02-22-the-rise-of-rome"
             }
           }
         ]
@@ -23,33 +27,33 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "80cccafe96f54d98",
+    "id": "27b724688b67554a",
     "type": "split",
     "children": [
       {
-        "id": "176bcc46ef72f966",
+        "id": "94747c8a54f6dbec",
         "type": "tabs",
         "children": [
           {
-            "id": "e4d1ae40b369a7d8",
+            "id": "81c7aba2822043d0",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
             }
           },
           {
-            "id": "aa0a5172c6a94ddc",
+            "id": "b81c240bf07a4619",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "path:",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +65,7 @@
             }
           },
           {
-            "id": "3979113d27afb72f",
+            "id": "669418245d2307ce",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,19 +81,20 @@
     "width": 300
   },
   "right": {
-    "id": "9411189075973063",
+    "id": "07888e6710349df9",
     "type": "split",
     "children": [
       {
-        "id": "f35084c2f9f10cc7",
+        "id": "333db06a70c04cb4",
         "type": "tabs",
         "children": [
           {
-            "id": "91fae10966f0c4a2",
+            "id": "511effc88c7e16d9",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "The Fall of the Roman Empire/2025-02-22-the-rise-of-rome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,24 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 2025-02-22-the-rise-of-rome"
             }
           },
           {
-            "id": "ef1e10f9c7fd9d5e",
+            "id": "797ff8e13d01501f",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "The Fall of the Roman Empire/2025-02-22-the-rise-of-rome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from 2025-02-22-the-rise-of-rome"
             }
           },
           {
-            "id": "ec8f36d334ef77ad",
+            "id": "98c259bb94160868",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,17 +137,18 @@
             }
           },
           {
-            "id": "5f25ba2671b4aabd",
+            "id": "4275cb8c9b987ed1",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "The Fall of the Roman Empire/2025-02-22-the-rise-of-rome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 2025-02-22-the-rise-of-rome"
             }
           }
         ]
@@ -158,26 +165,11 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "538a898a8fed32f0",
+  "active": "c79e135f5474fc3c",
   "lastOpenFiles": [
-    "The Fall of the Roman Empire/1. The Roman Republic and Transition to the Empire/index.html",
-    "Chaos Theory/index.html",
-    "The Fall of the Roman Empire/1. The Roman Republic and Transition to the Empire/Rome rising to power.md",
-    "The Fall of the Roman Empire/1. The Roman Republic and Transition to the Empire/01-Rome rising to power.md",
-    "Chaos Theory/01-The Butterfly Effect.md",
-    "Chaos Theory/The Butterfly effect.md",
-    "Chaos Theory",
-    "Rome rising to power.md",
-    "Untitled.canvas",
-    "Untitled",
-    "Untitled.md",
-    "Economic Decline.md",
-    "Welcome.md",
-    "The Fall of the Roman Empire/1. The Roman Republic and Transition to the Empire",
-    "The Fall of the Roman Empire"
+    "Chaos Theory/2025-02-22-the-butterfly-effect.md"
   ]
 }

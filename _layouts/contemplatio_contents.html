@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Contemplatio</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/contemplatio_contents.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Contemplatio Chronicles</div>
+        <ul class="nav-links">
+            <li><a href="{{ site.baseurl }}/">Home</a></li>
+            <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+            <li><a href="{{ site.baseurl }}/poems/">Poems</a></li>
+            <li><a href="{{ site.baseurl }}/contemplatio/">Contemplatio</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <i class="fas fa-moon">🌙</i>
+                <i class="fas fa-sun">☀️</i>
+                <span class="ball"></span>
+            </label>
+            <input type="text" class="search-box" placeholder="Search posts...">
+        </div>
+    </nav>
+
+    <div class="ide-container">
+        <header class="ide-header">
+            <h1 class="ide-title">{{ page.title }}</h1>
+            <p class="ide-description">{{ page.description }}</p>
+        </header>
+
+        <div class="ide-content">
+            {{ content }}
+        </div>
+
+        <section class="topic-list">
+            {% assign topic_pages = site.pages | where_exp: "file", "file.dir contains page.dir" %}
+            
+            {% for file in topic_pages %}
+                {% unless file.url == page.url %}
+                    <div class="topic-box">
+                        <div class="topic-image">
+                            <img src="{{ file.featured_image | relative_url }}" alt="{{ file.title }}">
+                        </div>
+                        <div class="topic-info">
+                            <span class="topic-number">#{{ forloop.index }}</span>
+                            <h2 class="topic-title"><a href="{{ file.url | relative_url }}">{{ file.title }}</a></h2>
+                            <p class="topic-excerpt">{{ file.excerpt }}</p>
+                        </div>
+                    </div>
+                {% endunless %}
+            {% endfor %}
+        </section>
+    </div>
+
+</body>
+</html>

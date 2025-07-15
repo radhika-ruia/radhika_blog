@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style_blog.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/contemplatio.css">
 </head>
 <body>
     <nav class="navbar">
@@ -44,28 +44,39 @@
     <!-- Divider Line -->
     <hr class="divider">
 
-    <!-- Featured Posts & Subscription Box -->
-    <section class="featured-and-subscription">
-        <!-- Featured Posts -->
-        <div class="featured-posts">
-            <h3>Featured Poems</h3>
-            <ul>
-                {% for post in site.contemplatio_posts %}
-                <li>
-                    <a href="{{ post.url | relative_url }}">
-                        <img src="{{ post.image }}" alt="Post Image">
-                        <div>
-                            <h4>{{ post.title }}</h4>
-                            <p>{{ post.date | date: "%d %b, %Y" }}</p>
-                        </div>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
+ <!-- Featured Posts & Next Topic Navigation -->
+<section class="featured-and-subscription">
+    <!-- Featured Posts -->
+    <div class="featured-posts">
+        <h3>Next Topics in This Series</h3>
+        <ul>
+            {% assign topic_pages = site.pages | where_exp: "file", "file.dir contains page.dir" | sort: "path" %}
+            
+            {% for file in topic_pages %}
+                {% if file.path == page.path %}
+                    {% assign next_index = forloop.index %}
+                {% endif %}
+            {% endfor %}
 
-    </section>
-</main>
+            {% assign next_topic = topic_pages[next_index] %}
+
+            {% if next_topic %}
+            <li>
+                <a href="{{ next_topic.url | relative_url }}">
+                    <img src="{{ next_topic.image }}" alt="Next Topic">
+                    <div>
+                        <h4>{{ next_topic.title }}</h4>
+                        <p>Next in Series →</p>
+                    </div>
+                </a>
+            </li>
+            {% else %}
+            <p>No more topics in this series.</p>
+            {% endif %}
+        </ul>
+    </div>
+</section>
+<main>
 
     <footer>
         <p>© 2025 Contemplatio Chronicles</p>

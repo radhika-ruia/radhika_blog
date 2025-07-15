@@ -1,3 +1,4 @@
+/* Navbar Styles */
 .navbar {
     display: flex;
     align-items: center;
@@ -146,12 +147,104 @@ body.dark h1, body.dark .navbar a {color: #fff;}
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
 }
-
-
+/* Cyberpunk IDE Theme */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap');
 
 body {
-    background-color: #1E1E2E; /* Dark Purple (VS Code-like) */
-    color: #ffffff; /* Ensures text is readable */
+    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(135deg, #ff6b81, #9b59b6);
+    color: #E6EDF3;
     margin: 0;
     padding: 0;
 }
+
+/* IDE-Like Container */
+.ide-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(20, 20, 30, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.ide-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.ide-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.ide-description {
+    font-size: 1.2rem;
+    color: #B3B3CC;
+}
+
+/* Topic List */
+.topic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Individual Topic Box */
+.topic-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgba(30, 30, 50, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.topic-box:hover {
+    transform: scale(1.02);
+}
+
+/* Image Section */
+.topic-image {
+    flex: 0.3;
+    padding: 10px;
+}
+
+.topic-image img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Info Section */
+.topic-info {
+    flex: 0.7;
+    padding: 10px;
+}
+
+.topic-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff77ff;
+}
+
+.topic-title {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.topic-title a {
+    text-decoration: none;
+    color: #E6EDF3;
+}
+
+.topic-excerpt {
+    font-size: 1rem;
+    color: #B3B3CC;
+}
+
